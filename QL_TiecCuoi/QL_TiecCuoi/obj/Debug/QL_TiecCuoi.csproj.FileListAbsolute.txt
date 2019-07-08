@@ -9,3 +9,4 @@ C:\Users\XPS 13\OneDrive\Desktop\NMCNPM\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_Tie
 C:\Users\XPS 13\OneDrive\Desktop\NMCNPM\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.pdb
 C:\Users\XPS 13\OneDrive\Desktop\NMCNPM\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.fDangNhap.resources
 C:\Users\XPS 13\OneDrive\Desktop\NMCNPM\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.fQL_TiecCuoi.resources
+C:\Users\XPS 13\OneDrive\Desktop\NMCNPM\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.ctrDatTiecCuoi.resources
