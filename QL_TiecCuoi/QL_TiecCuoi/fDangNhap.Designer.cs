@@ -140,7 +140,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "fDangNhap";
-            this.Text = "DangNhap";
+            this.Text = "Đăng Nhập";
             this.Load += new System.EventHandler(this.fDangNhap_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
