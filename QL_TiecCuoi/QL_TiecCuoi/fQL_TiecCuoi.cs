@@ -32,9 +32,22 @@ namespace QL_TiecCuoi
 
         }
 
+
+
         private void fQL_TiecCuoi_Load(object sender, EventArgs e)
         {
+            tmThoiGian.Start();
+            tmNgay.Start();
+        }
 
+        private void tmThoiGian_Tick(object sender, EventArgs e)
+        {
+            lbThoiGian.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void tmNgay_Tick(object sender, EventArgs e)
+        {
+            lbNgay.Text = DateTime.Now.ToShortDateString();
         }
     }
 }

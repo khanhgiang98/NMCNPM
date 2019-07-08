@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ctrDatTiecCuoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrDatTiecCuoi.Designer.cs">
+      <DependentUpon>ctrDatTiecCuoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="fDangNhap.cs">
       <SubType>Form</SubType>
@@ -61,6 +67,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ctrDatTiecCuoi.resx">
+      <DependentUpon>ctrDatTiecCuoi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fDangNhap.resx">
       <DependentUpon>fDangNhap.cs</DependentUpon>
     </EmbeddedResource>

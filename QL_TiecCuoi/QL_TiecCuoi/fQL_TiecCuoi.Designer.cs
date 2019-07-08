@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -41,6 +42,10 @@
             this.thayĐổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giúpĐỡToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbNgay = new System.Windows.Forms.Label();
+            this.lbThoiGian = new System.Windows.Forms.Label();
+            this.tmThoiGian = new System.Windows.Forms.Timer(this.components);
+            this.tmNgay = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -156,11 +161,41 @@
             this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.thôngTinToolStripMenuItem.Text = "Thông tin";
             // 
+            // lbNgay
+            // 
+            this.lbNgay.AutoSize = true;
+            this.lbNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNgay.Location = new System.Drawing.Point(733, 4);
+            this.lbNgay.Name = "lbNgay";
+            this.lbNgay.Size = new System.Drawing.Size(45, 20);
+            this.lbNgay.TabIndex = 3;
+            this.lbNgay.Text = "Ngay";
+            // 
+            // lbThoiGian
+            // 
+            this.lbThoiGian.AutoSize = true;
+            this.lbThoiGian.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThoiGian.Location = new System.Drawing.Point(636, 4);
+            this.lbThoiGian.Name = "lbThoiGian";
+            this.lbThoiGian.Size = new System.Drawing.Size(73, 20);
+            this.lbThoiGian.TabIndex = 4;
+            this.lbThoiGian.Text = "ThoiGian";
+            // 
+            // tmThoiGian
+            // 
+            this.tmThoiGian.Tick += new System.EventHandler(this.tmThoiGian_Tick);
+            // 
+            // tmNgay
+            // 
+            this.tmNgay.Tick += new System.EventHandler(this.tmNgay_Tick);
+            // 
             // fQL_TiecCuoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(867, 426);
+            this.Controls.Add(this.lbThoiGian);
+            this.Controls.Add(this.lbNgay);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MaximizeBox = false;
@@ -190,5 +225,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label lbNgay;
+        private System.Windows.Forms.Label lbThoiGian;
+        private System.Windows.Forms.Timer tmThoiGian;
+        private System.Windows.Forms.Timer tmNgay;
     }
 }
