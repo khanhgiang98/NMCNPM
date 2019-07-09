@@ -48,11 +48,18 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\HoaDonDAO.cs" />
     <Compile Include="fDatTiecCuoi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fDatTiecCuoi.Designer.cs">
       <DependentUpon>fDatTiecCuoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FHoaDon.designer.cs">
+      <DependentUpon>FHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
@@ -76,6 +83,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fDatTiecCuoi.resx">
       <DependentUpon>fDatTiecCuoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FHoaDon.resx">
+      <DependentUpon>FHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>

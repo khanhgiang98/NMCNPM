@@ -33,3 +33,6 @@ C:\Users\XPS 13\OneDrive\Desktop\NMCNPM-master\QL_TiecCuoi\QL_TiecCuoi\obj\Debug
 C:\Users\XPS 13\OneDrive\Desktop\NMCNPM-master\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.exe
 C:\Users\XPS 13\OneDrive\Desktop\NMCNPM-master\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.pdb
 C:\Users\XPS 13\OneDrive\Desktop\NMCNPM\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.FLogin.resources
+C:\Users\XPS 13\OneDrive\Desktop\NMCNPM\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.fDatTiecCuoi.resources
+C:\Users\XPS 13\OneDrive\Desktop\NMCNPM\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.FHoaDon.resources
+C:\Users\XPS 13\OneDrive\Desktop\NMCNPM\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.fThemSanh.resources

@@ -59,11 +59,11 @@
             this.dgv_maGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbDatDichVu = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btDatTiec = new System.Windows.Forms.Button();
+            this.lbTrangChu = new System.Windows.Forms.Label();
             this.dgv_dvTenDichVu = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dgv_dvSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_dvDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btDatTiec = new System.Windows.Forms.Button();
-            this.lbTrangChu = new System.Windows.Forms.Label();
             this.grbThongTinKhachHang.SuspendLayout();
             this.grbThongTinTiecCuoi.SuspendLayout();
             this.grbDatMonAn.SuspendLayout();
@@ -362,24 +362,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(342, 158);
             this.dataGridView1.TabIndex = 6;
             // 
-            // dgv_dvTenDichVu
-            // 
-            this.dgv_dvTenDichVu.HeaderText = "Tên Dịch Vụ";
-            this.dgv_dvTenDichVu.Name = "dgv_dvTenDichVu";
-            this.dgv_dvTenDichVu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_dvTenDichVu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dgv_dvSoLuong
-            // 
-            this.dgv_dvSoLuong.HeaderText = "Số Lượng";
-            this.dgv_dvSoLuong.Name = "dgv_dvSoLuong";
-            // 
-            // dgv_dvDonGia
-            // 
-            this.dgv_dvDonGia.HeaderText = "Đơn Giá";
-            this.dgv_dvDonGia.Name = "dgv_dvDonGia";
-            this.dgv_dvDonGia.ReadOnly = true;
-            // 
             // btDatTiec
             // 
             this.btDatTiec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -403,6 +385,24 @@
             this.lbTrangChu.TabIndex = 11;
             this.lbTrangChu.Text = "Trang Chủ";
             this.lbTrangChu.Click += new System.EventHandler(this.lbTrangChu_Click);
+            // 
+            // dgv_dvTenDichVu
+            // 
+            this.dgv_dvTenDichVu.HeaderText = "Tên Dịch Vụ";
+            this.dgv_dvTenDichVu.Name = "dgv_dvTenDichVu";
+            this.dgv_dvTenDichVu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_dvTenDichVu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dgv_dvSoLuong
+            // 
+            this.dgv_dvSoLuong.HeaderText = "Số Lượng";
+            this.dgv_dvSoLuong.Name = "dgv_dvSoLuong";
+            // 
+            // dgv_dvDonGia
+            // 
+            this.dgv_dvDonGia.HeaderText = "Đơn Giá";
+            this.dgv_dvDonGia.Name = "dgv_dvDonGia";
+            this.dgv_dvDonGia.ReadOnly = true;
             // 
             // fDatTiecCuoi
             // 
@@ -469,10 +469,10 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_maTenMonAn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_maDonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_maGhiChu;
+        private System.Windows.Forms.Button btDatTiec;
+        private System.Windows.Forms.Label lbTrangChu;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_dvTenDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_dvSoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_dvDonGia;
-        private System.Windows.Forms.Button btDatTiec;
-        private System.Windows.Forms.Label lbTrangChu;
     }
 }

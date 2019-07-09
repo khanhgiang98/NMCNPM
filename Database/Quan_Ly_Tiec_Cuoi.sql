@@ -86,6 +86,7 @@ CREATE TABLE HOA_DON
 (
 	sMaTiecCuoi varchar(4) PRIMARY KEY NOT NULL,
 		FOREIGN KEY (sMaTiecCuoi) REFERENCES TIEC_CUOI(sMaTiecCuoi),
+	sNguoiLap nvarchar(20),
 	dNgayThanhToan smalldatetime,
 	mDonGiaBan money,
 	mTongTienBan money,
