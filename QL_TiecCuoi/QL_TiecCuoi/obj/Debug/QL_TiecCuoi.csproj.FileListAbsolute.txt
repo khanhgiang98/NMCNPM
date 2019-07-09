@@ -7,7 +7,6 @@ C:\Users\XPS 13\OneDrive\Desktop\NMCNPM\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_Tie
 C:\Users\XPS 13\OneDrive\Desktop\NMCNPM\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.csproj.CoreCompileInputs.cache
 C:\Users\XPS 13\OneDrive\Desktop\NMCNPM\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.exe
 C:\Users\XPS 13\OneDrive\Desktop\NMCNPM\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.pdb
-C:\Users\XPS 13\OneDrive\Desktop\NMCNPM\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.fDangNhap.resources
 C:\Users\XPS 13\OneDrive\Desktop\NMCNPM\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.fQL_TiecCuoi.resources
 C:\Users\84979\Downloads\Documents\NMCNPM-master\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.csprojAssemblyReference.cache
 C:\Users\84979\Downloads\Documents\NMCNPM-master\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.ctrDatTiecCuoi.resources
@@ -33,3 +32,4 @@ C:\Users\XPS 13\OneDrive\Desktop\NMCNPM-master\QL_TiecCuoi\QL_TiecCuoi\obj\Debug
 C:\Users\XPS 13\OneDrive\Desktop\NMCNPM-master\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.csproj.CoreCompileInputs.cache
 C:\Users\XPS 13\OneDrive\Desktop\NMCNPM-master\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.exe
 C:\Users\XPS 13\OneDrive\Desktop\NMCNPM-master\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.pdb
+C:\Users\XPS 13\OneDrive\Desktop\NMCNPM\QL_TiecCuoi\QL_TiecCuoi\obj\Debug\QL_TiecCuoi.FLogin.resources

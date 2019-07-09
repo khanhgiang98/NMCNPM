@@ -46,14 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ctrDatTiecCuoi.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ctrDatTiecCuoi.Designer.cs">
-      <DependentUpon>ctrDatTiecCuoi.cs</DependentUpon>
-    </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="fDatTiecCuoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fDatTiecCuoi.Designer.cs">
+      <DependentUpon>fDatTiecCuoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,16 +66,25 @@
     <Compile Include="fQL_TiecCuoi.Designer.cs">
       <DependentUpon>fQL_TiecCuoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="fThemSanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThemSanh.Designer.cs">
+      <DependentUpon>fThemSanh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ctrDatTiecCuoi.resx">
-      <DependentUpon>ctrDatTiecCuoi.cs</DependentUpon>
+    <EmbeddedResource Include="fDatTiecCuoi.resx">
+      <DependentUpon>fDatTiecCuoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fQL_TiecCuoi.resx">
       <DependentUpon>fQL_TiecCuoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fThemSanh.resx">
+      <DependentUpon>fThemSanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
