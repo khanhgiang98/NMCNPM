@@ -10,67 +10,153 @@ namespace QL_TiecCuoi.DAO
 {
     class DataProvider
     {
-        static string connectionSTR = @"Data Source=XPS13-PC\SQLEXPRESS;Initial Catalog=QUAN_LY_TIEC_CUOI;Integrated Security=True";
 
-        public static DataSet getDataSet(string command)
+        private DataProvider() { }
+        private static DataProvider instance;
+        public static DataProvider Instance
         {
-            DataSet ds = new DataSet();
-            using (SqlConnection cn = new SqlConnection(connectionSTR))
+            get
             {
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(command, cn);
-                SqlDataAdapter ap = new SqlDataAdapter(cmd);
-                ds.Reset();
-                ap.Fill(ds);
-                return ds;
+                if (instance == null) instance = new DataProvider();
+                return instance;
+            }
+
+            private set
+            {
+                instance = value;
             }
         }
+        public string connectionStr = @"Data Source=XPS13-PC\SQLEXPRESS;Initial Catalog=QUAN_LY_TIEC_CUOI;Integrated Security=True";
 
-        public static DataTable getDataTable(string command)
+        public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
-            DataTable dt = new DataTable();
-            using (SqlConnection cn = new SqlConnection(connectionSTR))
+            //connectionStr += Environment.MachineName + ";Initial Catalog=CongNo;Integrated Security=True";
+            DataTable data = new DataTable();
+            using (SqlConnection connection = new SqlConnection(connectionStr))
             {
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(command, cn);
-                SqlDataAdapter ap = new SqlDataAdapter(cmd);
-                dt.Reset();
-                ap.Fill(dt);
-                return dt;
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                if (parameter != null)
+                {
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+                    foreach (string item in listPara)
+                    {
+                        if (item.Contains('@'))
+                        {
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i++;
+                        }
+                    }
+                }
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(data);
+                connection.Close();
             }
+            return data;
         }
 
-        public SqlDataReader getDataReader(string cmd)
+        public int ExecuteNonQuery(string query, object[] parameter = null)
         {
-            SqlDataReader dr;
-            SqlConnection cn = new SqlConnection(connectionSTR);
-            cn.Open();
-            SqlCommand command = new SqlCommand(cmd, cn);
-            dr = command.ExecuteReader();
-            return dr;
-        }
-
-        public static void queryDataBase(string cmd)
-        {
-            try
+            int data = 0;
+            using (SqlConnection connection = new SqlConnection(connectionStr))
             {
-                SqlConnection cn = new SqlConnection(connectionSTR);
-                cn.Open();
-                SqlCommand command = new SqlCommand(cmd, cn);
-                command.ExecuteNonQuery();
-                cn.Close();
-                System.Windows.Forms.MessageBox.Show("Executed");
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                if (parameter != null)
+                {
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+                    foreach (string item in listPara)
+                    {
+                        if (item.Contains('@'))
+                        {
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i++;
+                        }
+                    }
+                }
+                data = command.ExecuteNonQuery();
+                connection.Close();
             }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show("Failed");
-            }
+            return data;
         }
 
-        internal SqlConnection connDB()
+        public object ExecuteScalar(string query, object[] parameter = null)
         {
-            SqlConnection cnn = new SqlConnection(connectionSTR);
-            return cnn;
+            object data = 0;
+            using (SqlConnection connection = new SqlConnection(connectionStr))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                if (parameter != null)
+                {
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+                    foreach (string item in listPara)
+                    {
+                        if (item.Contains('@'))
+                        {
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i++;
+                        }
+                    }
+                }
+                data = command.ExecuteScalar();
+                connection.Close();
+            }
+            return data;
         }
+
+        public string ExecuteReader(string query)
+        {
+            string data = null;
+            using (SqlConnection connection = new SqlConnection(connectionStr))
+            {
+                SqlCommand Comm1 = new SqlCommand(query, connection);
+                connection.Open();
+                SqlDataReader DR1 = Comm1.ExecuteReader();
+                if (DR1.Read())
+                {
+                    data = DR1.GetValue(0).ToString();
+                }
+                connection.Close();
+            }
+            return data;
+        }
+        public string ExecuteReaderString(string query)
+        {
+            string data = null;
+            using (SqlConnection connection = new SqlConnection(connectionStr))
+            {
+                SqlCommand Comm1 = new SqlCommand(query, connection);
+                connection.Open();
+                SqlDataReader DR1 = Comm1.ExecuteReader();
+                while (DR1.Read())
+                {
+                    data += DR1.GetValue(0).ToString() + "@";
+                }
+                connection.Close();
+            }
+            return data;
+        }
+
+        public List<string> ExecuteReaderListString(string query)
+        {
+            List<string> strList = new List<string>();
+            using (SqlConnection connection = new SqlConnection(connectionStr))
+            {
+                SqlCommand Comm1 = new SqlCommand(query, connection);
+                connection.Open();
+                SqlDataReader DR1 = Comm1.ExecuteReader();
+                while (DR1.Read())
+                {
+                    strList.Add(DR1.GetValue(0).ToString());
+                }
+                connection.Close();
+            }
+            return strList;
+        }
+
     }
 }

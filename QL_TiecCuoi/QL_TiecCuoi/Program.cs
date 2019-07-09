@@ -16,7 +16,7 @@ namespace QL_TiecCuoi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fDangNhap());
+            Application.Run(new FLogin());
         }
     }
 }

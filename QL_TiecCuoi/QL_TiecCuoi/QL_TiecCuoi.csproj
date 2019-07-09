@@ -52,12 +52,13 @@
     <Compile Include="ctrDatTiecCuoi.Designer.cs">
       <DependentUpon>ctrDatTiecCuoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="fDangNhap.cs">
+    <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fDangNhap.Designer.cs">
-      <DependentUpon>fDangNhap.cs</DependentUpon>
+    <Compile Include="FLogin.Designer.cs">
+      <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="fQL_TiecCuoi.cs">
       <SubType>Form</SubType>
@@ -70,8 +71,8 @@
     <EmbeddedResource Include="ctrDatTiecCuoi.resx">
       <DependentUpon>ctrDatTiecCuoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fDangNhap.resx">
-      <DependentUpon>fDangNhap.cs</DependentUpon>
+    <EmbeddedResource Include="FLogin.resx">
+      <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fQL_TiecCuoi.resx">
       <DependentUpon>fQL_TiecCuoi.cs</DependentUpon>
