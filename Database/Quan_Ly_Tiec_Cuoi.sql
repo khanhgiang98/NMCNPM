@@ -9,7 +9,7 @@ CREATE TABLE CA
 (
 	sMaCa varchar(4) PRIMARY KEY NOT NULL,
 	sTenca nvarchar(20),
-	tGio time,
+	tGio time
 )
 -- Bảng Loại Sảnh
 CREATE TABLE LOAI_SANH
@@ -86,12 +86,14 @@ CREATE TABLE HOA_DON
 (
 	sMaTiecCuoi varchar(4) PRIMARY KEY NOT NULL,
 		FOREIGN KEY (sMaTiecCuoi) REFERENCES TIEC_CUOI(sMaTiecCuoi),
-	sNguoiLap nvarchar(20),
-	dNgayThanhToan smalldatetime,
+	dNgaylap smalldatetime,
 	mDonGiaBan money,
 	mTongTienBan money,
 	mTTDichVu money,
-	mTTHoaDon money
+	mTTHoaDon money,
+	dNguoiLap varchar(50),
+	dNgayThanhToan smalldatetime, 
+	TinhTrang int default 1
 )
 -- Bảng Báo Cáo Doanh Số Theo Thang
 CREATE TABLE BAO_CAO_DS
@@ -136,7 +138,7 @@ GO
 	INSERT INTO CA VALUES ('2','Toi','17:00')
 GO
 	INSERT INTO THAM_SO VALUES ('PhanTramPhatTre','1')
-/*GO
+
 	ALTER TABLE DAT_DICH_VU
 	ADD mThanhTien money
 -- Tính Thành Tiền Trong Đặt Dịch Vụ
@@ -175,14 +177,14 @@ GO
 	FOR INSERT, UPDATE
 	AS
 		BEGIN
-			DECLARE @TONG money, @MaTiecCuoi varchar(4), @NgayDaiTiec smalldatetime
+			DECLARE @TONG money, @MaTiecCuoi varchar(4), @NgayDatTiec smalldatetime
 			SELECT @MaTiecCuoi = sMaTiecCuoi FROM INSERTED
-			SELECT @NgayDaiTiec = dNgayDaiTiec FROM TIEC_CUOI WHERE (@MaTiecCuoi = sMaTiecCuoi)
+			SELECT @NgayDatTiec = dNgayDatTiec FROM TIEC_CUOI WHERE (@MaTiecCuoi = sMaTiecCuoi)
 			SELECT @TONG = sum(mThanhTien) FROM DAT_DICH_VU WHERE (@MaTiecCuoi = sMaTiecCuoi)
 			IF TRIGGER_NESTLEVEL() > 1
 				RETURN
 			UPDATE HOA_DON
-			SET mTTDichVu = @TONG, mTTHoaDon = @TONG + mTongTienBan, dNgayThanhToan = @NgayDaiTiec
+			SET mTTDichVu = @TONG, mTTHoaDon = @TONG + mTongTienBan, dNgaylap = @NgayDatTiec
 			WHERE (@MaTiecCuoi = sMaTiecCuoi)
 		END	
 -- Tính Tổng Doanh Thu Trong Báo Cáo Tháng
@@ -193,7 +195,7 @@ GO
 		BEGIN
 			DECLARE @Thang smallint, @Nam smallint, @TONG money, @MaBaoCao varchar(4)
 			SELECT @Thang = iThang, @Nam = iNam, @MaBaoCao = sMaBaoCao FROM INSERTED
-			SELECT @TONG = sum(mTTHoaDon) FROM HOA_DON WHERE (@Thang = month(dNgayThanhToan) and @Nam = year(dNgayThanhToan))
+			SELECT @TONG = sum(mTTHoaDon) FROM HOA_DON WHERE (@Thang = month(dNgayThanhToan) and @Nam = year(dNgayThanhToan) and TinhTrang=0)
 			UPDATE BAO_CAO_DS
 			SET mTongDoanhThu = @TONG
 			WHERE (@MaBaoCao = sMaBaoCao)
@@ -218,6 +220,7 @@ GO
 GO
 	INSERT INTO DANH_SACH_SANH VALUES ('1','Sanh 1','1','30','')
 	INSERT INTO TIEC_CUOI VALUES ('1','24/06/2018','A','B','123456789','25/06/2018','1','1','10000000','15','1')
+	INSERT INTO TIEC_CUOI VALUES ('2','22/03/2018','C','D','123456789','25/06/2018','1','1','10000000','15','1')
 	INSERT INTO MON_AN VALUES ('1','4 Mon Khai Vi','100000','')
 	INSERT INTO MON_AN VALUES ('2','Ga Bo Xoi','200000','')
 	INSERT INTO MON_AN VALUES ('3','Bo Xao Bong Thien Ly','300000','')
@@ -228,11 +231,13 @@ GO
 	INSERT INTO DAT_MON VALUES ('1','1','100000')
 	INSERT INTO DAT_MON VALUES ('1','2','200000')
 	INSERT INTO DAT_MON VALUES ('1','6','100000')
-	INSERT INTO DAT_DICH_VU VALUES ('1','1','250000','5','')
-	INSERT INTO DAT_DICH_VU VALUES ('1','2','200000','3','')
-	INSERT INTO HOA_DON(sMaTiecCuoi) VALUES ('1')
-	INSERT INTO BAO_CAO_DS VALUES ('1','6','2018','')
-	INSERT INTO BAO_CAO_DS VALUES ('2','7','2018','')
-	INSERT INTO DOANH_THU_NGAY VALUES ('1','25/06/2018','','','')
-	INSERT INTO DOANH_THU_NGAY VALUES ('1','23/06/2018','','','')
-*/
+	INSERT INTO DAT_MON VALUES ('2','6','100000')
+	INSERT INTO DAT_DICH_VU VALUES ('1','1','25000','5','')
+	INSERT INTO DAT_DICH_VU VALUES ('1','2','20000','3','')
+	INSERT INTO DAT_DICH_VU VALUES ('2','2','20000','3','')
+	
+	INSERT INTO HOA_DON(sMaTiecCuoi,dNguoiLap,dNgayThanhToan,TinhTrang) VALUES ('1',N'PuPuChaCha','6/7/2019','0')
+	INSERT INTO BAO_CAO_DS(sMaBaoCao,iThang,iNam) VALUES ('1','7','2019')
+	INSERT INTO BAO_CAO_DS(sMaBaoCao,iThang,iNam) VALUES ('2','9','2019')
+	INSERT INTO DOANH_THU_NGAY(sMaBaoCao,dNgay) VALUES ('1','6/7/2019')
+	INSERT INTO DOANH_THU_NGAY(sMaBaoCao,dNgay) VALUES ('1','7/9/2019')

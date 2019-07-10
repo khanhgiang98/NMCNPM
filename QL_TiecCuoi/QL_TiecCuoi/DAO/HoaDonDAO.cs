@@ -28,7 +28,7 @@ namespace QL_TiecCuoi.DAO
 
         public DataTable LoaddsHD()
         {
-            string query = "select sMaTiecCuoi,dNgayThanhToan,mTongTienBan,mTTDichVu,TinhTrang,sNguoiLap,dNgayThanhToan from HOA_DON ";
+            string query = "select sMaTiecCuoi,dNgaylap,mTongTienBan,mTTDichVu,TinhTrang,dNguoiLap,dNgayThanhToan from HOA_DON ";
             return DataProvider.Instance.ExecuteQuery(query);
         }
         public List<string> LayDSMaTC()
@@ -53,7 +53,7 @@ namespace QL_TiecCuoi.DAO
         }
         public string ThemHD(string matc, string nguoilap, string ngaythanhtoan)
         {
-            string query = "INSERT INTO HOA_DON(sMaTiecCuoi,sNguoiLap,dNgayThanhToan) VALUES('" + matc + "','" + nguoilap + "','" + ngaythanhtoan + "')";
+            string query = "INSERT INTO HOA_DON(sMaTiecCuoi,dNguoiLap,dNgayThanhToan) VALUES('" + matc + "','" + nguoilap + "','" + ngaythanhtoan + "')";
             return DataProvider.Instance.ExecuteReader(query);
         }
         public string XoaHD(string matc)

@@ -59,11 +59,10 @@
             this.dgv_maGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbDatDichVu = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btDatTiec = new System.Windows.Forms.Button();
-            this.lbTrangChu = new System.Windows.Forms.Label();
             this.dgv_dvTenDichVu = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dgv_dvSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_dvDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btDatTiec = new System.Windows.Forms.Button();
             this.grbThongTinKhachHang.SuspendLayout();
             this.grbThongTinTiecCuoi.SuspendLayout();
             this.grbDatMonAn.SuspendLayout();
@@ -362,30 +361,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(342, 158);
             this.dataGridView1.TabIndex = 6;
             // 
-            // btDatTiec
-            // 
-            this.btDatTiec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btDatTiec.Font = new System.Drawing.Font("Arial Black", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDatTiec.ForeColor = System.Drawing.Color.Red;
-            this.btDatTiec.Location = new System.Drawing.Point(690, 378);
-            this.btDatTiec.Name = "btDatTiec";
-            this.btDatTiec.Size = new System.Drawing.Size(130, 36);
-            this.btDatTiec.TabIndex = 9;
-            this.btDatTiec.Text = "Đặt Tiệc";
-            this.btDatTiec.UseVisualStyleBackColor = false;
-            // 
-            // lbTrangChu
-            // 
-            this.lbTrangChu.AutoSize = true;
-            this.lbTrangChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTrangChu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lbTrangChu.Location = new System.Drawing.Point(0, 0);
-            this.lbTrangChu.Name = "lbTrangChu";
-            this.lbTrangChu.Size = new System.Drawing.Size(79, 16);
-            this.lbTrangChu.TabIndex = 11;
-            this.lbTrangChu.Text = "Trang Chủ";
-            this.lbTrangChu.Click += new System.EventHandler(this.lbTrangChu_Click);
-            // 
             // dgv_dvTenDichVu
             // 
             this.dgv_dvTenDichVu.HeaderText = "Tên Dịch Vụ";
@@ -404,13 +379,26 @@
             this.dgv_dvDonGia.Name = "dgv_dvDonGia";
             this.dgv_dvDonGia.ReadOnly = true;
             // 
+            // btDatTiec
+            // 
+            this.btDatTiec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btDatTiec.Font = new System.Drawing.Font("Arial Black", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDatTiec.ForeColor = System.Drawing.Color.Red;
+            this.btDatTiec.Location = new System.Drawing.Point(690, 378);
+            this.btDatTiec.Name = "btDatTiec";
+            this.btDatTiec.Size = new System.Drawing.Size(130, 36);
+            this.btDatTiec.TabIndex = 9;
+            this.btDatTiec.Text = "Đặt Tiệc";
+            this.btDatTiec.UseVisualStyleBackColor = false;
+            // 
             // fDatTiecCuoi
             // 
             this.AcceptButton = this.btDatTiec;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::QL_TiecCuoi.Properties.Resources.top_nhà_hàng_tiệc_cưới_tốt_tại_tphcm;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(867, 426);
-            this.Controls.Add(this.lbTrangChu);
             this.Controls.Add(this.btDatTiec);
             this.Controls.Add(this.grbDatDichVu);
             this.Controls.Add(this.grbDatMonAn);
@@ -470,7 +458,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_maDonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_maGhiChu;
         private System.Windows.Forms.Button btDatTiec;
-        private System.Windows.Forms.Label lbTrangChu;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_dvTenDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_dvSoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_dvDonGia;

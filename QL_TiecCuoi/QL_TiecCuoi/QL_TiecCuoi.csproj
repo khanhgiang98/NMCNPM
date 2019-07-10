@@ -47,25 +47,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\BaoCaoDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\HoaDonDAO.cs" />
+    <Compile Include="DAO\ThongTinSanhDAO.cs" />
+    <Compile Include="DAO\TraCuuDAO.cs" />
+    <Compile Include="FBCDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBCDoanhThu.Designer.cs">
+      <DependentUpon>FBCDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="fDatTiecCuoi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fDatTiecCuoi.Designer.cs">
       <DependentUpon>fDatTiecCuoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="FHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FHoaDon.designer.cs">
-      <DependentUpon>FHoaDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FLogin.Designer.cs">
       <DependentUpon>FLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FHoaDon.Designer.cs">
+      <DependentUpon>FHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="fQL_TiecCuoi.cs">
       <SubType>Form</SubType>
@@ -79,22 +88,34 @@
     <Compile Include="fThemSanh.Designer.cs">
       <DependentUpon>fThemSanh.cs</DependentUpon>
     </Compile>
+    <Compile Include="FTraCuu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTraCuu.Designer.cs">
+      <DependentUpon>FTraCuu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FBCDoanhThu.resx">
+      <DependentUpon>FBCDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fDatTiecCuoi.resx">
       <DependentUpon>fDatTiecCuoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FHoaDon.resx">
-      <DependentUpon>FHoaDon.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FHoaDon.resx">
+      <DependentUpon>FHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fQL_TiecCuoi.resx">
       <DependentUpon>fQL_TiecCuoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fThemSanh.resx">
       <DependentUpon>fThemSanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTraCuu.resx">
+      <DependentUpon>FTraCuu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -123,7 +144,10 @@
     <Folder Include="DTO\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NhàHàng.jpg" />
+    <None Include="Resources\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\top-nhà-hàng-tiệc-cưới-tốt-tại-tphcm.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

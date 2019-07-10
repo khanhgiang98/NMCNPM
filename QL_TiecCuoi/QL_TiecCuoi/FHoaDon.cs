@@ -18,7 +18,7 @@ namespace QL_TiecCuoi
             InitializeComponent();
             LayDSMaTC();
             loadHD();
-            txtNgaytt.Text = day + "/" + month + "/" + year;
+            
             
             
         }
@@ -68,7 +68,8 @@ namespace QL_TiecCuoi
                 txtTinhTrang.Text = "Đã thanh toán";
             }
             txtTT.Text = HoaDonDAO.Instance.layTHD(cbbMaTiec.Text);
-            
+            txtNgaytt.Text= dtgvHD.Rows[row].Cells[6].Value.ToString();
+
         }
 
         public void DatTen()
@@ -97,12 +98,13 @@ namespace QL_TiecCuoi
             dtgvHD.Columns[6].Width = 100;
         }
 
+       
         private void btnThemhd_Click(object sender, EventArgs e)
         {
 
             try
             {
-                HoaDonDAO.Instance.ThemHD(cbbMaTiec.Text, txtNL.Text,txtNgaytt.Text );
+                HoaDonDAO.Instance.ThemHD(cbbMaTiec.Text, txtNL.Text,day+"/"+month+"/"+year );
                 loadHD();
                 
             }
@@ -145,7 +147,7 @@ namespace QL_TiecCuoi
                 }
                 else if(txtTinhTrang.Text=="Chưa thanh toán")
                 {
-                    DialogResult dlr = MessageBox.Show("Bạn muốn thanh toán hóa đơn này?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult dlr = MessageBox.Show("Bạn muốn thanh toán hóa đơn này?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dlr == DialogResult.Yes)
                     {
                         HoaDonDAO.Instance.updateTT(cbbMaTiec.Text,txtNgaytt.Text);
@@ -156,6 +158,11 @@ namespace QL_TiecCuoi
             {
                 MessageBox.Show("Lỗi dữ liệu!");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            loadHD();
         }
     }
 }

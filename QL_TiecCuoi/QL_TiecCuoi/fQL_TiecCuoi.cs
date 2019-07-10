@@ -49,5 +49,34 @@ namespace QL_TiecCuoi
         {
             lbNgay.Text = DateTime.Now.ToShortDateString();
         }
+
+        private void btnHD_Click(object sender, EventArgs e)
+        {
+            FHoaDon f = new FHoaDon();
+            f.ShowDialog();
+        }
+
+        private void btnTraCuu_Click(object sender, EventArgs e)
+        {
+            FTraCuu f = new FTraCuu();
+            f.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FBCDoanhThu f = new FBCDoanhThu();
+            f.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fThemSanh f = new fThemSanh();
+            f.ShowDialog();
+        }
     }
 }
