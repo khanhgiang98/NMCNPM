@@ -67,11 +67,10 @@ namespace QL_TiecCuoi
         {
             string DGBanToiThieu = DatTiecCuoiDAO.Instance.LayDonGiaBanToiThieu(DatTiecCuoiDAO.Instance.LayMaLoaiSanh(cbbSanh.Text));
             double DGBanTT = Convert.ToDouble(DGBanToiThieu);
-            double TongTienMonAn= 0;
+            double TongTienMonAn= 0.0;
             for (int i = 0; i < DGV_DatMon.Rows.Count - 1; i++)
             {
                 TongTienMonAn += Convert.ToDouble(DGV_DatMon.Rows[i].Cells[2].Value.ToString());
-                i++;
             }
 
             MessageBox.Show(TongTienMonAn.ToString());
