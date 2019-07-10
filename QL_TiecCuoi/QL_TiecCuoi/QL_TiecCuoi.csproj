@@ -49,6 +49,7 @@
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BaoCaoDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\fDatTiecCuoiDAO.cs" />
     <Compile Include="DAO\HoaDonDAO.cs" />
     <Compile Include="DAO\ThongTinSanhDAO.cs" />
     <Compile Include="DAO\TraCuuDAO.cs" />

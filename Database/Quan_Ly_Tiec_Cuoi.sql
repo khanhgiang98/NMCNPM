@@ -141,6 +141,8 @@ GO
 
 	ALTER TABLE DAT_DICH_VU
 	ADD mThanhTien money
+	ALTER TABLE DAT_MON
+	ADD sGhiChu nvarchar(50)
 -- Tính Thành Tiền Trong Đặt Dịch Vụ
 GO
 	CREATE TRIGGER THANHTIEN_DICHVU ON DAT_DICH_VU

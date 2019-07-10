@@ -76,6 +76,7 @@ namespace QL_TiecCuoi
             cbbLoaiSanh.Text = dgvThongTinSanh.Rows[e.RowIndex].Cells["sLoaiSanh"].Value.ToString();
             txbSLBanTD.Text = dgvThongTinSanh.Rows[e.RowIndex].Cells["iSLBanToiDa"].Value.ToString();
             txbGhiChu.Text = dgvThongTinSanh.Rows[e.RowIndex].Cells["sGhiChu"].Value.ToString();
+            txbMaSanh.Enabled = false;
             btnThemSanh.Enabled = false;
             btnSuaSanh.Enabled = true;
         }
@@ -97,6 +98,8 @@ namespace QL_TiecCuoi
                 cbbLoaiSanh.Text = "";
                 txbSLBanTD.Text = "";
                 txbGhiChu.Text = "";
+                txbMaSanh.Enabled = true;
+                btnThemSanh.Enabled = false;
             }
             catch (Exception)
             {
@@ -127,6 +130,7 @@ namespace QL_TiecCuoi
                 cbbLoaiSanh.Text = "";
                 txbSLBanTD.Text = "";
                 txbGhiChu.Text = "";
+                txbMaSanh.Enabled = true;
             }
             catch (Exception)
             {

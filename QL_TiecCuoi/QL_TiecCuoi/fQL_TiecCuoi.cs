@@ -70,7 +70,8 @@ namespace QL_TiecCuoi
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            fDatTiecCuoi f = new fDatTiecCuoi();
+            f.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
