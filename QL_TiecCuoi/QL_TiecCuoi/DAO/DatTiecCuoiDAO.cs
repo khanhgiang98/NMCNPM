@@ -67,9 +67,9 @@ namespace QL_TiecCuoi.DAO
             return DataProvider.Instance.ExecuteReader(query);
         }
 
-        public List<string> LayDSLoaiSanh()
+        public List<string> LayDSSanh()
         {
-            string query = "select sMaLoaiSanh from LOAI_SANH where sTenLoaiSanh <> ''";
+            string query = "select sMaSanh from DANH_SACH_SANH where sTenSanh <> ''";
             return DataProvider.Instance.ExecuteReaderListString(query);
         }
 
@@ -92,7 +92,7 @@ namespace QL_TiecCuoi.DAO
 
         public string ThemTiecCuoi(string MaTC, string TenCR, string TenCD, string SDT, string NgayDaiTiec, string NgayDatTiec, string MaSanh, string MaCa, string TienDC, string SLB, string SLBDT)
         {
-            string query = "INSERT INTO TIEC_CUOI VALUES('" + MaTC + "','" + NgayDatTiec + "','" + TenCR + "','" + TenCD + "','" + SDT + "','" + NgayDaiTiec + "','" + MaCa + "','" + MaSanh + "','" + TienDC + "','" + SLB + "','" + SLBDT + "')";
+            string query = "INSERT INTO TIEC_CUOI VALUES ('" + MaTC + "','" + NgayDatTiec + "','" + TenCR + "','" + TenCD + "','" + SDT + "','" + NgayDaiTiec + "','" + MaCa + "','" + MaSanh + "','" + TienDC + "','" + SLB + "','" + SLBDT + "')";
             return DataProvider.Instance.ExecuteReader(query);
         }
 
@@ -102,7 +102,7 @@ namespace QL_TiecCuoi.DAO
             return DataProvider.Instance.ExecuteReader(query);
         }
 
-        public string ThemDichVu(string MaTc, string MaDichVu, string DonGia, string SoLuong)
+        public string ThemDichVu(string MaTc, string MaDichVu, string SoLuong, string DonGia)
         {
             string query = "INSERT INTO DAT_DICH_VU VALUES ('" + MaTc + "','" + MaDichVu + "','" + SoLuong + "','" + DonGia + "')";
             return DataProvider.Instance.ExecuteReader(query);

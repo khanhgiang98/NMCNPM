@@ -438,6 +438,7 @@
             this.txbMaTiecCuoi.Name = "txbMaTiecCuoi";
             this.txbMaTiecCuoi.Size = new System.Drawing.Size(68, 22);
             this.txbMaTiecCuoi.TabIndex = 11;
+            this.txbMaTiecCuoi.TextChanged += new System.EventHandler(this.txbMaTiecCuoi_TextChanged);
             // 
             // fDatTiecCuoi
             // 

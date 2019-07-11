@@ -35,9 +35,11 @@ namespace QL_TiecCuoi
 
         private void fDatTiecCuoi_Load(object sender, EventArgs e)
         {
+            txbSoLuongBan.Text = "0";
+            txbSoLuonngBanDuTru.Text = "0";
             btDatTiec.Enabled = false;
             tmNgay.Start();
-            LayDSLoaiSanh();
+            LayDSSanh();
             LayDSCa();
             LayDSMaMonAN();
             LayDSMaDichVu();
@@ -45,7 +47,7 @@ namespace QL_TiecCuoi
 
         private void txbTenChuRe_TextChanged(object sender, EventArgs e)
         {
-            btDatTiec.Enabled = true;
+            
         }
 
 
@@ -55,7 +57,7 @@ namespace QL_TiecCuoi
             int SLBanTD = Convert.ToInt32(SLBanToiDa);
             int SLBan = Convert.ToInt32(txbSoLuongBan.Text);
             int SLBanDT = Convert.ToInt32(txbSoLuonngBanDuTru.Text);
-            if (SLBanTD < (SLBan + SLBanDT))
+            if ((SLBanTD < (SLBan + SLBanDT))&&(SLBan + SLBanDT > 0))
             {
                 return false;
             }
@@ -73,7 +75,7 @@ namespace QL_TiecCuoi
                 TongTienMonAn += Convert.ToDouble(DGV_DatMon.Rows[i].Cells[2].Value.ToString());
             }
 
-            MessageBox.Show(TongTienMonAn.ToString());
+            //MessageBox.Show(TongTienMonAn.ToString());
 
             if (TongTienMonAn > DGBanTT)
                 return true;
@@ -81,9 +83,9 @@ namespace QL_TiecCuoi
                 return false;
         }
 
-        public void LayDSLoaiSanh()
+        public void LayDSSanh()
         {
-            cbbSanh.DataSource = DatTiecCuoiDAO.Instance.LayDSLoaiSanh();
+            cbbSanh.DataSource = DatTiecCuoiDAO.Instance.LayDSSanh();
         }
 
         public void LayDSCa()
@@ -190,18 +192,7 @@ namespace QL_TiecCuoi
                 try
                 {
                     DatTiecCuoiDAO.Instance.ThemTiecCuoi(txbMaTiecCuoi.Text, txbTenChuRe.Text, txbTenCoDau.Text, txbSoDienThoai.Text, dtNgayDaiTiec.Value.ToShortDateString(), lbNgay.Text, cbbSanh.Text, cbbCa.Text, txbTienDatCoc.Text, txbSoLuongBan.Text, txbSoLuonngBanDuTru.Text);
-
-                    for (int i = 0; i < DGV_DatMon.Rows.Count - 1; i++)
-                    {
-                        DatTiecCuoiDAO.Instance.ThemMon(txbMaTiecCuoi.Text,DGV_DatMon.Rows[i].Cells[0].Value.ToString(), DGV_DatMon.Rows[i].Cells[2].Value.ToString(), DGV_DatMon.Rows[i].Cells[3].Value.ToString());
-                    }
-
-                    for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-                    {
-                        DatTiecCuoiDAO.Instance.ThemDichVu(txbMaTiecCuoi.Text,dataGridView1.Rows[i].Cells[0].Value.ToString(), dataGridView1.Rows[i].Cells[3].Value.ToString(), dataGridView1.Rows[i].Cells[2].Value.ToString());
-                    }
-
-                    MessageBox.Show("Thêm Thành Công!!!");
+                    MessageBox.Show("Thêm Tiệc Cưới Thành Công!!!");
                     txbMaTiecCuoi.Clear();
                     txbTenChuRe.Clear();
                     txbTenCoDau.Clear();
@@ -209,14 +200,53 @@ namespace QL_TiecCuoi
                     txbTienDatCoc.Clear();
                     txbSoLuongBan.Clear();
                     txbSoLuonngBanDuTru.Clear();
-                    DGV_DatMon.ClearSelection();
-                    dataGridView1.ClearSelection();
+                    DGV_DatMon.DataSource = "";
+                    dataGridView1.DataSource = "";
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Lỗi dữ liệu!!!");
+                    MessageBox.Show("Lỗi dữ liệu Tiệc Cưới!!!");
+                }
+                //-----------------------------------
+                try
+                {
+                    for (int i = 0; i < DGV_DatMon.Rows.Count - 1; i++)
+                    {
+                        string MaMA = DGV_DatMon.Rows[i].Cells["dgv_maMaMonAn"].Value.ToString();
+                        long DG = Convert.ToInt64(DGV_DatMon.Rows[i].Cells["dgv_maDonGia"].Value.ToString());
+                        string GC = DGV_DatMon.Rows[i].Cells["dgv_maGhiChu"].Value.ToString();
+                        DatTiecCuoiDAO.Instance.ThemMon(txbMaTiecCuoi.Text, MaMA, DG.ToString(), GC);
+                    }
+                    MessageBox.Show("Thêm Đặt Món thành công!!!");
+                    DGV_DatMon.DataSource = "";
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Lỗi dữ liệu Đặt Món!!!");
+                }
+                //-----------------------------------
+                try
+                {
+                    for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                    {
+                        string MaDV = dataGridView1.Rows[i].Cells["dgv_dvMaDichVu"].Value.ToString();
+                        string SL = dataGridView1.Rows[i].Cells["dgv_dvSoLuong"].Value.ToString();
+                        long DG = Convert.ToInt64(dataGridView1.Rows[i].Cells["dgv_dvDonGia"].Value.ToString());
+                        DatTiecCuoiDAO.Instance.ThemDichVu(txbMaTiecCuoi.Text, MaDV, SL, DG.ToString());
+                    }
+                    MessageBox.Show("Thêm Đặt Dịch Vụ thành công!!!");
+                    dataGridView1.DataSource = "";
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Lỗi dữ liệu Đặt Dịch Vụ!!!");
                 }
             }
+        }
+
+        private void txbMaTiecCuoi_TextChanged(object sender, EventArgs e)
+        {
+            btDatTiec.Enabled = true;
         }
     }
 }

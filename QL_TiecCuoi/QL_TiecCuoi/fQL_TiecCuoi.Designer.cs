@@ -258,7 +258,7 @@
             this.MinimizeBox = false;
             this.Name = "fQL_TiecCuoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản Lý Tiệc Cưới";
+            this.Text = " Quản lý Tiệc Cưới";
             this.Load += new System.EventHandler(this.fQL_TiecCuoi_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
